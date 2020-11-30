@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://hackmd.io/@AndreyPhys/flask-ml-api#/ -->
+<html lang="ru-RU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        
+        <meta name="description" content="Введение в git, deploy ML models">
+        
+        <title>Flask ML API - HackMD</title>
+        <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+        <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+        
+<script src="./Flask ML API_files/rules-p-GpPtabXgUQ99B.js.Без названия" async=""></script><script type="text/javascript" async="" src="./Flask ML API_files/quant.js.Без названия" nonce=""></script><script type="text/javascript" async="" src="./Flask ML API_files/analytics.js.Без названия" nonce=""></script><script async="" src="./Flask ML API_files/gtm.js.Без названия"></script><script nonce="">
+window.domain = 'hackmd.io'
+window.urlpath = ''
+window.debug = false
+window.version = '1.3.0'
+window.brand = 'HackMD'
+
+
+
+window.GOOGLE_API_KEY = 'AIzaSyCjSrqWHhmWJnoI7JlD88XDSaBgiKbaenA'
+window.GOOGLE_CLIENT_ID = '911617723593-drikdibvvn63slfd6kbqigo8ql1no55s.apps.googleusercontent.com'
+window.DROPBOX_APP_KEY = 'rdoizrlnkuha23r'
+
+window.PLANTUML_SERVER = 'https://ptuml.hackmd.io'
+
+window.ASSET_URL = 'https://assets.hackmd.io'
+
+window.USER_CAN_CREATE_TEAM = true
+window.USER_CAN_DELETE_ACCOUNT = true
+window.USER_DELETE_ACCOUNT_VIA_EMAIL = true
+window.PAYMENT_ENABLED = true
+window.GITHUB_SYNC_ENABLED = true
+window.FREE_TEAM_NUM = 3
+window.FREE_TEAM_MEMBER_NUM = 3
+window.FREE_PUBLIC_TEAM_NUM = 10
+
+window.ALLOW_ANONYMOUS = true
+window.PUBLIC_OVERVIEW = false
+window.INTERNAL_PUBLIC_OVERVIEW = false
+
+
+
+
+
+
+
+window.USE_CDN = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+        
+<!-- Google Tag Manager -->
+<script nonce="">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KLW9Z3');</script>
+<!-- End Google Tag Manager -->
+
+
+        <meta property="fb:app_id" content="1436904003272070">
+
+<meta name="twitter:image:src" content="https://lh3.googleusercontent.com/a-/AAuE7mD_vWrR1bEEpB2wzwQ76ts-RYinKy5FglFwlb3_jZo">
+
+<meta name="twitter:site" content="@hackmdio">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flask ML API - HackMD">
+
+<meta name="twitter:description" content="Введение в git, deploy ML models">
+
+
+<meta property="og:image" content="https://lh3.googleusercontent.com/a-/AAuE7mD_vWrR1bEEpB2wzwQ76ts-RYinKy5FglFwlb3_jZo">
+
+<meta property="og:site_name" content="HackMD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flask ML API - HackMD">
+
+<meta property="og:description" content="Введение в git, deploy ML models">
+
+
+
+        
+        <link rel="stylesheet" href="./Flask ML API_files/reveal.css">
+        <link rel="stylesheet" href="./Flask ML API_files/emojify.min.css">
+         <link href="./Flask ML API_files/font-vendor.b86e2bf451b246b1a88e.css" rel="stylesheet"><link href="./Flask ML API_files/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet"><link href="./Flask ML API_files/slide-vendor.69891338bef7e9b58324.css" rel="stylesheet"><link href="./Flask ML API_files/slide.342745193736c40617a1.css" rel="stylesheet">
+        
+
+        <!-- style-loader will insert style before this div in development -->
+        <!-- This prevents overwriting reveal.js theme css -->
+        <meta id="style-tag-insertion">
+
+        <!-- For reveal.js theme -->
+        
+        <link rel="stylesheet" href="./Flask ML API_files/white.css" id="theme">
+        
+        <!-- For overwrite reveal.js -->
+        <link rel="stylesheet" href="./Flask ML API_files/slide.css">
+
+        <!-- Printing and PDF exports -->
+		<script nonce="">
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+            link.href = 'https://assets.hackmd.io/build/reveal.js/' + (window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css');
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script><link rel="stylesheet" type="text/css" href="./Flask ML API_files/paper.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+    <style>::-moz-focus-inner{border:0 !important;}:focus,.focus{outline: none !important;}</style><script type="text/javascript" src="./Flask ML API_files/notes.js.Без названия"></script><style></style><link rel="stylesheet" type="text/css" href="./Flask ML API_files/fretboard.f32f2a8d5293869f0195.css"><script charset="utf-8" src="./Flask ML API_files/fretboard.96eb64772ce93dae0d18.js.Без названия"></script></head>
+    <body>
+        <div class="container hidescrollbar" data-hard-breaks="true">
+            <div class="reveal none center has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="">
+                <div class="slides" style="width: 960px; height: 700px; zoom: 1.05051;"><section data-markdown="" data-markdown-parsed="true" class="present" style="top: 240px; display: block;" data-rendered="true"><div><h2 class="raw part" data-startline="NaN" data-endline="NaN">Деплой моделей машинного обучения</h2>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 32px; display: block;"><div><h2 class="raw part" data-startline="NaN" data-endline="NaN">A typical ML workflow</h2>
+<img src="./Flask ML API_files/dVasgK9.png" style="background:none; border:none; box-shadow:none;">
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 1.5px; display: block;"><div><h2 class="raw part" data-startline="NaN" data-endline="NaN">API JSON</h2>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0"><img src="./Flask ML API_files/OAmBZn2.png" style="background:none; border:none; box-shadow:none;" width="843" height="507"></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">JSON</h3>
+<p style="text-align: justify; font-size: 25pt">
+JSON (JavaScript Object Notation) - простой формат обмена данными, удобный для чтения и написания как человеком, так и компьютером.
+</p>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0"><img src="./Flask ML API_files/ZsE380O.jpg" alt="Imgur" class="raw" data-position="NaN" data-size="41"></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Создание проекта</h3>
+<ul class="part" data-startline="NaN" data-endline="NaN">
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">Pycharm</li>
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">venv</li>
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">версия python и requirements.txt</li>
+</ul>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Web-фреймворк для API</h3>
+<img src="./Flask ML API_files/pcJDuUM.png" style="background:none; border:none; box-shadow:none;">
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Обработка ошибок</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Логгирование</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Тестирование</h3>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">По уровню тестирование бывает:</p>
+<div style="text-align: justify; font-size: 25pt">
+<ul>
+<li>Модульное / юнит-тестирование – проверка корректной работы отдельных единиц ПО. Этот вид тестирования могут выполнять сами разработчики.</li>
+<li>Интеграционное тестирование – проверка взаимодействия между несколькими единицами ПО.</li>
+<li>Системное – проверка работы всей системы на соответствие заявленным требованиям к программному продукту.</li>
+</ul>
+</div>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Модульное тестирование</h3>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">Фреймворк PyTest</p>
+<pre class="part" data-startline="NaN" data-endline="NaN" data-position="NaN"><code class="shell hljs raw">python -m pytest -vv
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Пример работы с фронт-системой</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Production server</h3>
+<img src="./Flask ML API_files/au1279Y.jpg" style="background:none; border:none; box-shadow:none;">
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Gunicorn</h3>
+<p style="text-align: justify; font-size: 25pt">Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.</p>
+<pre class="part" data-startline="NaN" data-endline="NaN" data-position="NaN"><code class="shell hljs raw">gunicorn -w 4 -b 127.0.0.1:5000 app:app
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Тестирование производительности</h3>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">ab - Apache HTTP server benchmarking tool</p>
+<pre class="part" data-startline="NaN" data-endline="NaN" data-position="NaN"><code class="shell hljs raw">ab -c 100 -n 1000 http://127.0.0.1:5000/
+
+</code></pre>
+<div style="text-align: justify; font-size: 25pt">
+-c concurrency - количество параллельных запросов в единицу времени.<br>
+-n requests - количество запросов, которое необходимо выполнить в течение сессии тестирования.
+</div>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Deploy to Heroku</h3>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">Procfile:</p>
+<pre class="part" data-startline="NaN" data-endline="NaN" data-position="NaN"><code class="shell hljs raw">web: gunicorn app:app
+</code></pre>
+<p class="part" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0">Buildpacks:</p>
+<pre class="part" data-startline="NaN" data-endline="NaN" data-position="NaN"><code class="shell hljs raw">heroku/python
+https://github.com/heroku/heroku-buildpack-jvm-common.git
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">gRPC</h3>
+<div style="text-align: justify; font-size: 25pt">
+gRPC - это высокопроизводительный фреймворк разработанный компанией Google для вызов удаленных процедур (RPC), работает поверх HTTP/2.
+<br><br>
+Protobuf - формат сериализации, использует строгую типизацию полей и бинарный формат для передачи  и данных потребляет значительно меньше ресурсов чем JSON.
+</div>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h3 class="raw part" data-startline="NaN" data-endline="NaN">Platforms for managing the machine learning lifecycle</h3>
+<ul class="part" data-startline="NaN" data-endline="NaN">
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0"><a href="https://mlflow.org/" target="_blank" rel="noopener">MLFlow</a></li>
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0"><a href="https://dvc.org/doc/use-cases/versioning-data-and-model-files" target="_blank" rel="noopener">Data Version Control (DVC)</a></li>
+<li class="raw" data-startline="NaN" data-endline="NaN" data-position="NaN" data-size="0"><a href="https://metaflow.org/" target="_blank" rel="noopener">MetaFlow</a></li>
+</ul>
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div><h2 class="raw part" data-startline="NaN" data-endline="NaN">Thank you</h2>
+</div></section></div>
+            <div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="progress" style="display: none;"><span></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: block;"><a href="https://hackmd.io/@AndreyPhys/flask-ml-api#/"><span class="slide-number-a">1</span></a></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Деплой моделей машинного обучения
+</div></div>
+
+            <div id="meta" style="display: none;">{"title":"Flask ML API","tags":"Flask, Geekbrains","description":"Введение в git, deploy ML models","slideOptions":{"transition":"none","progress":false,"slideNumber":true,"theme":"white"}}</div>
+
+            <div class="footer">
+                <div class="unselectable hidden-print" style="color: #777; line-height: 22px;">
+                    <small>
+                        <span>
+                            
+                                <span class="ui-lastchangeuser" data-profile="AndreyPhys"> <a class="ui-user-icon small user-card-popover" style="background-image: url(https://lh3.googleusercontent.com/a-/AAuE7mD_vWrR1bEEpB2wzwQ76ts-RYinKy5FglFwlb3_jZo);" target="_blank" href="https://hackmd.io/@AndreyPhys" data-toggle="popover" data-original-title="" title=""></a></span>
+                            
+                            &nbsp;<span class="text-uppercase ui-status-lastchange">changed 3 months ago</span>
+                            <span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 17 2020 12:26:48 GMT+0000 (UTC)" data-updatetime="Fri Aug 21 2020 16:25:08 GMT+0000 (UTC)"></span>
+                        </span>
+                        <span class="pull-right">
+                            150 views
+                            <a href="https://hackmd.io/@AndreyPhys/flask-ml-api/edit?both" class="ui-edit" title="Edit this note">
+                                <i class="fa fa-fw fa-pencil"></i>
+                            </a>
+                            <a href="https://hackmd.io/@AndreyPhys/flask-ml-api?print-pdf" class="ui-print" title="Print slide">
+                                <i class="fa fa-fw fa-print"></i>
+                            </a>
+                        </span>
+                        <br>
+                        
+                        
+                    </small>
+                </div>
+                
+            </div>
+        </div>
+
+        
+<script async="" src="./Flask ML API_files/js"></script>
+<script nonce="">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    let userid = (document.cookie.match('(^|; )userid=([^;]*)')||0)[2];
+    gtag('config', 'UA-60728495-1', {'user_id': userid});
+</script>
+<script src="./Flask ML API_files/bundle.min.js.Без названия" crossorigin="anonymous"></script>
+<script nonce="">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
+
+
+        
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLW9Z3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+        <script src="./Flask ML API_files/i18n.js.Без названия"></script>
+        
+         <script src="./Flask ML API_files/font-vendor.3c28db3001b8bd6f1d3f.js.Без названия" defer="defer"></script><script src="./Flask ML API_files/common-vendor.d485f77e88ea7ed44236.js.Без названия" defer="defer"></script><script src="./Flask ML API_files/slide-vendor.b73dc8703442066e2cf3.js.Без названия" defer="defer"></script><script src="./Flask ML API_files/slide-common.b9993d7dec1fe23b8c66.js.Без названия" defer="defer"></script><script src="./Flask ML API_files/slide.8e3d1712b669b8d80ee5.js.Без названия" defer="defer"></script>
+        
+    
+
+
+
+
+</body></html>

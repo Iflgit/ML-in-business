@@ -1,0 +1,34 @@
+[2020-Nov-26 21:29:28] 127.0.0.1 POST http /? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\werkzeug\routing.py", line 1940, in match
+    raise MethodNotAllowed(valid_methods=list(have_match_for))
+werkzeug.exceptions.MethodNotAllowed: 405 Method Not Allowed: The method is not allowed for the requested URL.
+
+[2020-Nov-26 21:29:28] 127.0.0.1 POST http /? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\flask\ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "c:\users\ifl\documents\github\ml-in-business\.venv\lib\site-packages\werkzeug\routing.py", line 1940, in match
+    raise MethodNotAllowed(valid_methods=list(have_match_for))
+werkzeug.exceptions.MethodNotAllowed: 405 Method Not Allowed: The method is not allowed for the requested URL.
+
+[2020-Nov-26 21:30:18] request from 46.53.241.88: {'ID': 1, 'LicAge': 450, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': '', 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP20', 'VehUsage': 'Private', 'DrivAge': 21, 'HasKmLimit': 0, 'BonusMalus': 97, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-Nov-26 21:30:18] request from 46.53.241.88: {'ID': 1, 'LicAge': 450, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': '', 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP20', 'VehUsage': 'Private', 'DrivAge': 21, 'HasKmLimit': 0, 'BonusMalus': 97, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-Nov-26 21:30:36] predicted for 18.619986 msec: {'ID': 1, 'value_Poisson': 0.3449213080792129, 'value_Gamma': 874.7446496994197, 'value_BurningCost': 301.71806880961674}
+
+[2020-Nov-26 21:30:36] predicted for 18.619986 msec: {'ID': 1, 'value_Poisson': 0.3449213080792129, 'value_Gamma': 874.7446496994197, 'value_BurningCost': 301.71806880961674}
+
